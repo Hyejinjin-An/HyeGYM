@@ -1,6 +1,3 @@
-https://www.notion.so/CAL-ab4060854f32490792a65902275cf710
-
-
 - Database :           MySQL
 - Java version :       JDK 17
 - Tool :               SpringBoot
