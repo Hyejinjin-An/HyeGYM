@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+	
+	<select id="userList" resultType="HashMap">
+		select * from user
+	</select>
+	
+	<insert id="insertUser" parameterType="UserDTO">
+		insert into user(
+			`index`,
+			`id`,
+			`password`,
+			`name`,
+			`gender`,
+			`birth`,
+			`email`
+		)values (
+			DEFAULT,
+			#{id},
+			#{password},
+			#{name},
+			#{gender},
+			#{birth},
+			#{email}
+		)
+	</insert>
+	
+	<select id="selectUser" parameterType="UserDTO" resultType="UserDTO">
+		select * from user
+		where id = #{id}
+		and password = #{password}
+	</select>
+	
+	<insert id="insertReserveUser" parameterType="ReserveUserDTO">
+		insert into reservation(
+			`idx`,
+			`id`,
+			`name`,
+			`email`,
+			`teacher`,
+			`date`,
+			`time`
+		)values(
+			DEFAULT,
+			#{id},
+			#{name},
+			#{email},
+			#{teacher},
+			#{date},
+			#{time}
+		);
+	</insert>
+	
+	<select id="selectReserveUser" parameterType="UserDTO" resultType="ReserveUserDTO">
+		select * from reservation
+		where id = #{id}
+		and name = #{name}
+	</select>
+	
+	<delete id="deleteReservation" parameterType="ReserveUserDTO">
+		delete from reservation
+		where id = #{id}
+	</delete>
+	
+</mapper>

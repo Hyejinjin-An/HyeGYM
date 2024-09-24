@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+	<properties resource="application.properties"/>
+	
+	<!--mapper에서 매칭할 parmeter Type 별칭 설정-->
+	<typeAliases>
+		<typeAlias type="com.hyegym.user.UserDTO" alias="UserDTO"/>
+		<typeAlias type="com.hyegym.admin.AdminDTO" alias="AdminDTO"/>
+		<typeAlias type="com.hyegym.notice.NoticeDTO" alias="NoticeDTO"/>
+		<typeAlias type="com.hyegym.notice.PagingDTO" alias="PagingDTO"/>
+		<typeAlias type="com.hyegym.user.ReserveUserDTO" alias="ReserveUserDTO"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<!-- environment id를 구분하여 연결할 DB를 여려개 구성할 수 도 있음 -->
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+				<dataSource type="POOLED">
+					<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+					<property name="url" value="jdbc:mysql://localhost:3306/hyegym"/>
+					<property name="username" value="root"/>
+					<property name="password" value="hyegym123"/>
+				</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="mapper/admin/AdminMapper.xml"/>
+		<mapper resource="mapper/user/UserMapper.xml"/>
+		<mapper resource="mapper/notice/NoticeMapper.xml"/>
+	</mappers>
+	
+</configuration>

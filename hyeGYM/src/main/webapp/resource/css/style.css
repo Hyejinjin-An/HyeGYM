@@ -1,0 +1,399 @@
+@charset "UTF-8";
+
+
+/*header*/
+.header {
+	border: solid;
+	display: block;	
+	align-items: center;
+	padding: 2px;
+	width: 600px;
+}
+
+.nav_home {
+	display: flex;
+	float: left;
+	width: 100px;
+	height: 50px;
+	margin: auto;
+}
+
+.nav_home .mainpage {
+	text-align: center;
+	margin: auto;
+}
+
+.nav_menu {
+	display: flex;
+}
+
+.nav_menu .menu {
+	display: flex;
+	width: 300px;
+}
+
+.nav_menu .menu>ul {
+	display:flex;
+	justify-content: center;
+	width:auto;
+	margin: 2px;
+}
+
+.nav_menu .menu li {
+	list-style-type: none;
+	display: flex;
+    width: 65px;
+    padding: 10px;
+    margin: 4px;
+}
+
+.nav_login {
+	float: right;
+	text-align: right;
+	margin-left: 10px;
+}
+
+.nav_login>ul {
+	display:flex;
+	justify-content: center;
+	text-align: center;	
+}
+
+.nav_login li {
+	list-style-type: none;
+	display: flex;
+    text-align: center;
+    margin-right: 10px;
+}
+
+
+/*footer*/
+.footer {
+	border:solid;	
+	padding: 30px;
+	width: 540px;
+}
+
+.footer_title {
+	display: block;
+}
+
+.footer_copy {
+	display: block;
+}
+
+
+
+
+/*main page*/
+.main_container {
+	width: 600px;
+	height: 500px;
+	text-align: center;
+	padding: 2px;
+}
+
+.contents_menu {
+	display: flex;
+	padding-top: 90px;
+	padding-left: 10px;
+	text-align: center;
+	width: auto;
+}
+
+.contents_menu .contents_menu_button {
+	display: flex;
+	text-align: center;
+	padding: 30px;
+	width: 100%;
+}
+
+.index button{
+	text-align: center;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+
+/*join page*/
+.join_table {
+	padding: 3px;
+	width: 100%;
+	text-align: center;
+}
+
+.join_table tr {
+	text-align: center;
+	width:auto;
+}
+
+.join_table td {
+	width:auto;
+}
+
+.join_table td span {
+	display: inline-block;
+	margin-right: 5%;
+	width:100px;
+	text-align: left;
+}
+
+.join_table td div {
+	display: inline-block;
+	width: 30%;
+	text-align: left;
+}
+
+.join_table input {
+	text-align: left;
+}
+
+
+/*login page**/
+.login_table {
+	padding: 3px;
+	width: 100%;
+	text-align: center;
+}
+
+.login_table tr {
+	text-align: center;
+	width:auto;
+}
+
+.login_table td {
+	width:auto;
+}
+
+.login_table td span {
+	display: inline-block;
+	width:100px;
+	text-align: left;
+}
+
+.login_table td div {
+	display: inline-block;
+	width: 30%;
+	text-align: left;
+}
+
+.login_table input {
+	text-align: left;
+}
+
+
+
+/*notice page*/
+.notice_table {
+	padding: 3px;
+	width: 100%;
+	text-align: center;
+	border: none;
+	font-size: small;
+}
+
+.notice_table tr {
+	text-align: center;
+	width:auto;
+}
+
+.notice_table td {
+	width:auto;
+}
+
+.notice_table td span {
+	display: inline-block;
+	margin-right: 5%;
+	width:100px;
+	text-align: left;
+}
+
+.notice_table td:nth-child(1) {
+	width: 20px;
+}
+
+.notice_table td:nth-child(n+3) {
+	width: 100px;
+}
+
+.notice_table input {
+	text-align: left;
+}
+
+
+/*notice info page*/
+.noticeinfo_table {
+	padding: 3px;
+	width: 100%;
+	border: none;
+	font-size: small;
+}
+
+.noticeinfo_table tr th{
+	width: 70px;
+}
+
+.noticeinfo_table tr td:nth-child(even){
+	width: 150px;
+	text-align: left;
+}
+
+.noticeinfo_table tr:nth-child(3){
+	height:200px;
+	width:auto;
+}
+
+
+/*admin notice new page*/
+.adminNoticeinfo_table {
+	padding: 3px;
+	width: 100%;
+	border: none;
+	font-size: small;
+}
+
+.adminNoticeinfo_table tr th{
+	width: 70px;
+}
+
+.adminNoticeinfo_table tr input{
+	width: 270px;
+	border: none;
+}
+
+.adminNoticeinfo_table tr textarea{
+	height:200px;
+	width:100%;
+	border: none;
+}
+
+.adminNoticeinfo_table tr td:nth-child(even){
+	width: 150px;
+	text-align: left;
+}
+
+.adminNoticeinfo_table tr:nth-child(2){
+	height:200px;
+	width:auto;
+}
+
+/*admin user table*/
+.user_table{
+	text-align: center;
+	width:100%;
+}
+
+
+/*pagination Box*/
+.paging_box {
+	text-align: center;
+	display: inline-block;
+}
+
+.pagination {
+	list-style-type: none;
+	text-align: center;
+	display: flex;
+}
+
+.pagination li {
+	padding: 5px;
+	width: 10px;
+}
+
+
+/*PT reservation page*/
+.image_container {
+	text-align: center;
+	display: flex;
+	height: 300px;
+	padding: 10px;
+}
+
+.image_div {
+	width:30%;
+	margin:10px;
+	text-align: center;
+	display: inline-block;
+}
+
+.image_div .images{
+	width:150px;
+	text-align: center;
+	margin-left: 15px;
+}
+
+.image_div .images img{
+	width:150px;
+	text-align: center;
+}
+
+.reserve_container {
+	text-align:center;
+	width: 100%;
+}
+
+.reserve_table {
+	padding: 3px;
+	margin-left: 150px;
+	width: 100%;
+	text-align: center;
+}
+
+.reserve_table tr {
+	text-align: center;
+	width:100%;
+}
+
+.reserve_table td {
+	text-align: left;
+	width:100%;
+}
+
+.reserve_table td span {
+	display: inline-block;
+	text-align: left;
+	width:20%;
+}
+
+.reserve_table td div {
+	display: inline-block;
+	width: 30%;
+	text-align: left;
+}
+
+.reserve_button_div {
+	margin-top: 20px;
+}
+
+.reserve_table #reserveDate {
+	width: 90px;
+}
+
+.reserve_table .reserveTimeTable {
+	width: 20%;
+}
+
+.reserved_table {
+	padding: 3px;
+	margin-left: 150px;
+	width: 100%;
+	text-align: center;
+}
+
+.reserved_table tr {
+	text-align: center;
+	width:100%;
+}
+
+.reserved_table td {
+	text-align: left;
+	width:100%;
+}
+
+.reserved_table td span {
+	display: inline-block;
+	text-align: left;
+	width:40%;
+}
