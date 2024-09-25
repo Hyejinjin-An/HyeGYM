@@ -156,7 +156,7 @@ public class UserController {
 	
 	@GetMapping("/reserveSuccess")
 	public ModelAndView reserveSuccess(jakarta.servlet.http.HttpSession session) {
-		ReserveUserDTO user = (ReserveUserDTO) session.getAttribute("userinfo");
+		ReserveUserDTO user = (ReserveUserDTO) session.getAttribute("reserveUserInfo");
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("reserveUserInfo", user);
 		mav.setViewName("user/reservation_success");

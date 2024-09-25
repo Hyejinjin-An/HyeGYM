@@ -14,54 +14,54 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<h1>회원가입</h1>
+		<h1>会員加入</h1>
 		<br/>
 		<div>
 			<table class="join_table">
 				<tr>
 					<td>
-						<span>아이디</span>
+						<span>ID</span>
 						<input type="text" name="id">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>비밀번호</span>
+						<span>パスワード</span>
 						<input type="password" name="password">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이름</span>
+						<span>名前</span>
 						<input type="text" name="name">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>생년월일</span>
+						<span>生年月日</span>
 						<input type="number" name="birth" placeholder="YYYYMMDD">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>성별</span>
+						<span>性別</span>
 						<div>
-							<input type="radio" name="gender" value="f" checked>여자
-							<input type="radio" name="gender" value="m">남자
+							<input type="radio" name="gender" value="f" checked>女
+							<input type="radio" name="gender" value="m">男
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이메일</span>
+						<span>メール</span>
 						<input type="text" name="email" placeholder="example@gmail.com">
 					</td>
 				</tr>
 			</table>
 			<br/>
-			<input type="button" onclick="location.href='main'" value="돌아가기">
+			<input type="button" onclick="location.href='main'" value="戻る">
 			&nbsp;
-			<input type="button" onclick="javascript:join()" value="회원가입">
+			<input type="button" onclick="javascript:join()" value="加入する">
 		</div>
 	</div>
 	<!-- main Contents end -->

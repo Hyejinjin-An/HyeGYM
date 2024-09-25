@@ -15,7 +15,7 @@
 		
 		<div class="nav_home">
 			<span class="mainpage">
-				<a href="main" >홈</a>
+				<a href="main" >メイン</a>
 			</span>
 		</div>
 		<div class="nav_menu">
@@ -30,12 +30,16 @@
 				<ul>
 					<c:choose>
 						<c:when test="${userinfo.id ne null}">
-							<li class="user_id"><b>${userinfo.id}</b>&nbsp;님</li>
-							<li class="logout"><input type="button" onclick="javascript:logout()" value="로그아웃"></li>
+							<li class="user_id"><b>${userinfo.id}</b>&nbsp;様</li>
+							<li class="logout"><input type="button" onclick="javascript:logout()" value="ログアウト"></li>
+						</c:when>
+						<c:when test="${userinfo.id ne null} %>">
+							<li class="user_id"><b>${user.id}</b>&nbsp;様</li>
+							<li class="logout"><input type="button" onclick="javascript:logout()" value="ログアウト"></li>
 						</c:when>
 						<c:otherwise>
-							<li class="join"><input type="button" onclick="location.href='join'" value="회원가입"></li>
-							<li class="login"><input type="button" onclick="location.href='login'" value="로그인"></li>
+							<li class="join"><input type="button" onclick="location.href='join'" value="会員加入"></li>
+							<li class="login"><input type="button" onclick="location.href='login'" value="ログイン"></li>
 						</c:otherwise>
 					</c:choose>
 				</ul>
@@ -52,10 +56,10 @@
 				dataType:"Text", 
 				success: function(result) { //controller에서 return받은 message부분임
 					if(result == "success"){
-						alert("로그하웃 하였습니다.")
-						document.location.reload();
+						alert("ログアウトしました。")
+						location.assign("/user/main")
 					}else{
-						alert("로그하웃 실패하였습니다.");
+						alert("ログアウト失敗しました。");
 					}
 				},
 			    error: function(error) {

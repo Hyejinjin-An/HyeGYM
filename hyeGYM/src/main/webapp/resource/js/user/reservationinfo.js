@@ -8,7 +8,7 @@ $(document).ready(function(){
 	$("#reserveDate").datepicker({
 		dateFormat : 'yy-mm-dd',
 		showButtonPanel : true,
-		closeText : '닫기',
+		closeText : '閉じる',
 		minDate : "0D",
 		maxDate : "+7D"
 	});
@@ -25,8 +25,12 @@ function submitReserve() {
 		email : $("#email").text(),
 		teacher : $("#t").text(),
 		date : $("#reserveDate").val(),
-		time : $(".reserveTime").val()
+		time : $(".reserveTime").val(),
+		datestr : splitDate($("#reserveDate").val()),
+		timestr : splitTime($(".reserveTime").val())
 	}
+	
+	console.log(param)
 	
 	if(validate(param)){	
 		if(confirm("예약하시겠습니까?")){
@@ -55,6 +59,19 @@ function submitReserve() {
 
 function sessionInsertData(param){
 	sessionStorage.setItem("reserveUserInfo", param);
+}
+
+function splitDate(date){
+	var date = date;
+	var date_str = date.split("-").join("");
+	return date_str;
+}
+
+function splitTime(time){
+	var time = time
+	time = time.split(":");
+	var time_str = time[0] + time[2];
+	return time_str;
 }
 
 function validate() {

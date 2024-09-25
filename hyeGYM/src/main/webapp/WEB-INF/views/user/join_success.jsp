@@ -13,11 +13,11 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<p><b>${id}</b> 님 환영합니다!</p>
+		<p><b>${id}</b> 様　ようこそ！</p>
 		<br/>
-		<input type="button" onclick="location.href='main'" value="돌아가기">
+		<input type="button" onclick="location.href='main'" value="マインへ">
 		&nbsp;
-		<input type="button" onclick="location.href='login'" value="로그인">
+		<input type="button" onclick="location.href='login'" value="ログイン">
 	</div>
 	<!-- main Contents end -->
 	

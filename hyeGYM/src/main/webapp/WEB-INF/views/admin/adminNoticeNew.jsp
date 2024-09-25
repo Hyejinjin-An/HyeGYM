@@ -15,27 +15,27 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<h1>공지사항 글 작성</h1>
+		<h1>お知らせ作成</h1>
 		<br/>
 		<div>
 			<table class="adminNoticeinfo_table" border="1">
 	        <tr>
-	        	<th>제목</th>
+	        	<th>タイトル</th>
 	        	<td colspan="2"><input type="text" class="noticeTitle"/></td>
- 		        <th>작성자</th>
+ 		        <th>登録者</th>
 	        	<td class="noticeId"><c:out value="${userinfo.id}" default="admin" /></td>
 	        </tr>
 	        <tr>
-	        	<th>내용</th>
+	        	<th>内容</th>
 	        	<td colspan="4"><textarea class="noticeContents"></textarea></td>
 	        </tr>
 	    </table>
 			<br/>
 		</div>
 		<br/>
-		<button class="list" onclick="location.href='adminNotice'">목록</button>
+		<button class="list" onclick="location.href='adminNotice'">リストに戻る</button>
 		&nbsp;
-		<button class="list" onclick="javascript:noticeNew()">등록</button>
+		<button class="list" onclick="javascript:noticeNew()">登録する</button>
 	</div>
 	<!-- main Contents end -->
 	

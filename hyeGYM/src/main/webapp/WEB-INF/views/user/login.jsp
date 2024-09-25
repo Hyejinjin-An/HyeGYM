@@ -27,20 +27,20 @@
 		}
 	%>
 	<div class="main_container">
-		<h1>로그인</h1>
+		<h1>ログイン</h1>
 		<br/>
 		<div>
 		<form action="loginUser" onSubmit="return infoValidate()" method="post">
 			<table class="login_table">
 				<tr>
 					<td>
-						<span>아이디</span>
+						<span>ID</span>
 						<input type="text" name="id">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>비밀번호</span>
+						<span>パスワード</span>
 						<input type="password" name="password">
 					</td>
 				</tr>
@@ -49,9 +49,9 @@
 				<p style="color:red;">로그인에 실패하였습니다. 다시 시도해주세요.</p>
 			</c:if>
 			<br/>
-			<input type="button" onclick="location.href='main'" value="돌아가기">
+			<input type="button" onclick="location.href='main'" value="メインへ">
 			&nbsp;
-			<input type="submit" value="로그인">
+			<input type="submit" value="ログインする">
 		</form>
 		</div>
 	</div>

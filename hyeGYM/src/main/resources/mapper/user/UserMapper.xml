@@ -42,7 +42,9 @@
 			`email`,
 			`teacher`,
 			`date`,
-			`time`
+			`time`,
+			`datestr`,
+			`timestr`
 		)values(
 			DEFAULT,
 			#{id},
@@ -50,7 +52,9 @@
 			#{email},
 			#{teacher},
 			#{date},
-			#{time}
+			#{time},
+			#{datestr},
+			#{timestr}
 		);
 	</insert>
 	

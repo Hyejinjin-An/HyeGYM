@@ -16,30 +16,30 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<h1>PT 예약 상세정보</h1>
+		<h1>PT　予約情報</h1>
 		<div class="reserve_container">
 			<table class="reserve_table">
 				<tr>
 					<td>
-						<span>아이디</span>
+						<span>ID</span>
 						<span id="id"><b>${userinfo.id}</b></span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이름</span>
+						<span>名前</span>
 						<span id="name">${userinfo.name}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이메일</span>
+						<span>メール</span>
 						<span id="email">${userinfo.email}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>선생님</span>
+						<span>先生</span>
 						<c:choose>
 							<c:when test="${t eq '1'}"><span id="t">teacher1</span></c:when>
 							<c:when test="${t eq '2'}"><span id="t">teacher2</span></c:when>
@@ -50,13 +50,13 @@
 				</tr>
 				<tr>
 					<td>
-						<span>희망날짜</span>
+						<span>希望日付</span>
 						<input type="text" id="reserveDate">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>희망시간</span>
+						<span>希望時間</span>
 						<span class="reserveTimeTable">
 							<select class="reserveTime">
 								<option selected>select</option>
@@ -79,9 +79,9 @@
 		</div>
 		<br/>
 		<div class="reserve_button_div">
-			<button onclick="location.href='main'">메인화면으로</button>
+			<button onclick="location.href='main'">メインへ</button>
 			&nbsp;
-			<button onclick="javascript:submitReserve()">예약하기</button>
+			<button onclick="javascript:submitReserve()">予約する</button>
 		</div>
 	</div>
 	<!-- main Contents end -->

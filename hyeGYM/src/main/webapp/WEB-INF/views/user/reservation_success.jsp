@@ -12,49 +12,49 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<h1>예약 정보</h1>
+		<h1>予約完了</h1>
 		<div class="image_container">
 			<table class="reserved_table">
 				<tr>
 					<td>
-						<span>아이디</span>
+						<span>ID</span>
 						<span><b>${reserveUserInfo.id}</b></span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이름</span>
+						<span>名前</span>
 						<span>${reserveUserInfo.name}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이메일</span>
+						<span>メール</span>
 						<span>${reserveUserInfo.email}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>선생님</span>
+						<span>先生</span>
 						<span>${reserveUserInfo.teacher}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>희망날짜</span>
+						<span>希望日付</span>
 						<span><b>${reserveUserInfo.date}</b></span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>희망시간</span>
+						<span>希望時間</span>
 						<span><b>${reserveUserInfo.time}</b></span>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<br/>
-		<button onclick="location.href='main'">main</button>
+		<button onclick="location.href='main'">メインへ</button>
 	</div>
 	<!-- main Contents end -->
 	

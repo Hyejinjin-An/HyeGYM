@@ -13,51 +13,51 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<h1>예약 정보</h1>
+		<h1>予約情報</h1>
 		<div class="image_container">
 			<table class="reserved_table">
 				<tr>
 					<td>
-						<span>아이디</span>
+						<span>ID</span>
 						<span id="id"><b>${reserveUserInfo.id}</b></span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이름</span>
+						<span>名前</span>
 						<span id="name">${reserveUserInfo.name}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>이메일</span>
+						<span>メール</span>
 						<span id="email">${reserveUserInfo.email}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>선생님</span>
+						<span>先生</span>
 						<span id="teacher">${reserveUserInfo.teacher}</span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>희망날짜</span>
+						<span>希望日付</span>
 						<span id="date"><b>${reserveUserInfo.date}</b></span>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<span>희망시간</span>
+						<span>希望時間</span>
 						<span id="time"><b>${reserveUserInfo.time}</b></span>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<br/>
-		<button onclick="location.href='main'">메인화면으로</button>
+		<button onclick="location.href='main'">メインへ</button>
 		&nbsp;
-		<button onclick="javascript:submitDeleteReservation()">예약취소</button>
+		<button onclick="javascript:submitDeleteReservation()">予約キャンセル</button>
 	</div>
 	<!-- main Contents end -->
 	
