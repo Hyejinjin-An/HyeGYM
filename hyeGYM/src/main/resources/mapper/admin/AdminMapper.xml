@@ -20,4 +20,24 @@
 		from reservation a, (select @rownum:=0) temp
 		ORDER BY STR_TO_DATE(CONCAT(datestr,timestr),'%Y%m%d%H%i%s')
 	</select>
+	
+	<select id="selectLimitUserList" parameterType="AdminDTO" resultType="AdminDTO">
+		select * from user ORDER BY idx
+		LIMIT #{startList}, #{listSize}
+	</select>
+	
+	<select id="userTotalCount" resultType="int">
+		select COUNT(*) from user
+	</select>
+	
+	<select id="reserveTotalCount" resultType="int">
+		select COUNT(*) from reservation
+	</select>
+	
+	<select id="selectLimitReserveUserList" parameterType="AdminDTO" resultType="ReserveUserDTO">
+		select a.*, @rownum:=@rownum+1 rownum
+		from reservation a, (select @rownum:=0) temp
+		ORDER BY STR_TO_DATE(CONCAT(datestr,timestr),'%Y%m%d%H%i%s')
+		LIMIT #{startList}, #{listSize}
+	</select>
 </mapper>

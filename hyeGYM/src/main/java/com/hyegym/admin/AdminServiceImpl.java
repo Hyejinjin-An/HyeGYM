@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hyegym.notice.PaginationDTO;
 import com.hyegym.user.ReserveUserDTO;
 
 @Service
@@ -37,6 +38,26 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public List<ReserveUserDTO> selectReserveUserList() {
 		return adminDAO.selectReserveUserList();
+	}
+
+	@Override
+	public List<AdminDTO> selectLimitUserList(PaginationDTO pagination) {
+		return adminDAO.selectLimitUserList(pagination);
+	}
+
+	@Override
+	public int selectUserTotalCount() {
+		return adminDAO.selectUserTotalCount();
+	}
+
+	@Override
+	public int selectReserveTotalCount() {
+		return adminDAO.selectReserveTotalCount();
+	}
+
+	@Override
+	public List<ReserveUserDTO> selectLimitReserveUserList(PaginationDTO pagination) {
+		return adminDAO.selectLimitReserveUserList(pagination);
 	}
 
 }

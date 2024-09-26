@@ -14,15 +14,15 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<h1>공지사항</h1>
+		<h1>お知らせ</h1>
 		<br/>
 		<div>
 			<table class="notice_table" border="1">
 	        <tr>
 	        	<th>no</th>
-	            <th colspan="2">제목</th>
-	            <th>작성자</th>
-	            <th>등록일</th>
+	            <th colspan="2">タイトル</th>
+	            <th>登録者</th>
+	            <th>登録日</th>
 	        </tr>
 	        <c:forEach var="contents" items="${contents}">
 	            <tr>
@@ -54,7 +54,7 @@
 	    </div>
 		<br/>
 		</div>
-		<button onclick="location.href='main'">메인 페이지로</button>
+		<button onclick="location.href='main'">メインへ</button>
 	</div>
 	<!-- main Contents end -->
 	

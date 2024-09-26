@@ -3,6 +3,9 @@ package com.hyegym.notice;
 import java.text.ParseException;
 import java.util.Date;
 
+import org.apache.tomcat.jakartaee.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.tomcat.jakartaee.commons.lang3.builder.ToStringStyle;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -109,17 +112,10 @@ public class NoticeDTO extends CommonPagingDTO{
 		this.updateAt = updateAt;
 	}
 	
-    @Override
+	@Override
     public String toString() {
-        return "NoticeDTO info : {" +
-        		"idx = " + idx + ", " +
-                "no = " + no + ", " +
-        		"title = " + title + ", " +
-                "contents = " + contents + ", " +
-                "id = " + id + ", " +
-        		"createAt = " + createAt + ", " + 
-        		"updateAt = " + updateAt +
-                '}';
+        return ReflectionToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
+
 
 }

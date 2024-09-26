@@ -3,14 +3,12 @@ package com.hyegym.admin;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +20,8 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.hyegym.notice.NoticeDTO;
 import com.hyegym.notice.NoticeService;
 import com.hyegym.notice.PaginationDTO;
-import com.hyegym.notice.PagingDTO;
 import com.hyegym.user.ReserveUserDTO;
+import com.hyegym.user.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -53,18 +51,47 @@ public class AdminController {
 	}
 
 	@GetMapping("/adminUserList")
-	public ModelAndView userList() throws Exception {
+	public ModelAndView userList(@RequestParam(required = false, defaultValue = "1") int page, 
+								@RequestParam(required = false, defaultValue = "1") int range) throws Exception {
+		List<AdminDTO> list = null;
+		
+		// 전체 게시글 갯수 조회
+		int listTotalCnt = adminSvc.selectUserTotalCount();
+		
+		// 페이지 처리를 위한 객체 생성
+		PaginationDTO pagination = new PaginationDTO();
+		pagination.pageInfo(page, range, listTotalCnt);
+		
+		try {
+			list = adminSvc.selectLimitUserList(pagination);
+
+			log.info("회원정보 조회 완료! " + list.size() + " 건");
+			log.info("페이징 객체 확인 " + pagination.toString());
+		}catch (Exception e) {
+			log.error("select error! " + e.getMessage());
+			e.printStackTrace();
+		}
+		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("userList", this.selectUserList());
+		mav.addObject("userList", list);
+		mav.addObject("paging", pagination);
 		mav.setViewName("admin/adminUserList");
 		return mav;
 	}
 	
 	@GetMapping("/adminReserveList")
-	public ModelAndView workoutinfo() throws Exception {
+	public ModelAndView workoutinfo(@RequestParam(required = false, defaultValue = "1") int page, 
+									@RequestParam(required = false, defaultValue = "1") int range) throws Exception {
 		List<ReserveUserDTO> userinfo = null;
+		
+		// 전체 예약정보 조회
+		int reserve = adminSvc.selectReserveTotalCount();
+		
+		// 페이지 처리를 위한 객체 생성
+		PaginationDTO pagination = new PaginationDTO();
+		pagination.pageInfo(page, range, reserve);
 		try {
-			userinfo = adminSvc.selectReserveUserList();			
+			userinfo = adminSvc.selectLimitReserveUserList(pagination);			
 		}catch (Exception e) {
 			log.error("select error! " + e.getMessage());
 			e.printStackTrace();
@@ -72,6 +99,7 @@ public class AdminController {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("userList",userinfo);
+		mav.addObject("paging", pagination);
 		mav.setViewName("admin/adminReserveList");
 		return mav;
 	}

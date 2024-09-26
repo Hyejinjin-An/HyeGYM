@@ -13,17 +13,17 @@
 	
 	<!-- main Contents start -->
 	<div class="main_container">
-		<h1>PT 예약 현황</h1>
+		<h1>PT 予約情報</h1>
 		<br/>
 		<table border="1" class="user_table" >
 	        <tr>
 	        	<th>no</th>
-	            <th>아이디</th>
-	            <th>이름</th>
-	            <th>이메일</th>
-	            <th>선생님</th>
-	            <th>희망날짜</th>
-	            <th>희망시간</th>
+	            <th>ID</th>
+	            <th>名前</th>
+	            <th>メール</th>
+	            <th>先生</th>
+	            <th>希望日付</th>
+	            <th>希望時間</th>
 	        </tr>
 	        <c:forEach var="userlist" items="${userList}" varStatus="idx">
 	            <tr>
@@ -38,14 +38,65 @@
 	        </c:forEach>
 	
 	    </table>
+	    
+     	<div class="paging_box">
+			<ul class="pagination">
+			<c:if test="${paging.prev}">
+				<li class="page-item">
+					<a class="page-link" href="#" onClick="fn_prev('${paging.page}', '${paging.range}', '${paging.rangeSize}')">Prev</a>
+				</li>
+			</c:if>
+			<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="idx">
+				<li class="page-item <c:out value="${paging.page == idx ? 'active' : ''}"/> ">
+					<a class="page-link" href="#" onClick="fn_pagination('${idx}', '${paging.range}', '${paging.rangeSize}')"> ${idx} </a>
+				</li>
+			</c:forEach>
+			<c:if test="${paging.next}">
+				<li class="page-item">
+					<a class="page-link" href="#" onClick="fn_next('${paging.range}', '${paging.range}', '${paging.rangeSize}')">Next</a>
+				</li>
+			</c:if>
+			</ul>
+	    </div>
 	    <br/>
 	    <br/>
-		<button onclick="location.href='main'">main</button>
+		<button onclick="location.href='main'">メインへ</button>
 	</div>
 	<!-- main Contents end -->
 	
 	<!-- footer start -->
 	<jsp:include page="../layout/footer.jsp"></jsp:include>
 	<!-- footer end -->
+	
+	<script type="text/javascript">
+		//이전 버튼 이벤트
+		function fn_prev(page, range, rangeSize) {
+			var page = ((range - 2) * rangeSize) + 1;
+			var range = range - 1;
+	
+			var url = "/admin/adminReserveList";
+			url = url + "?page=" + page;
+			url = url + "&range=" + range;
+			location.href = url;
+		}
+	
+		//페이지 번호 클릭	
+		function fn_pagination(page, range, rangeSize) {
+			var url = "/admin/adminReserveList";
+			url = url + "?page=" + page;
+			url = url + "&range=" + range;
+			location.href = url;
+		}
+	
+		//다음 버튼 이벤트
+		function fn_next(page, range, rangeSize) {
+			var page = parseInt((range * rangeSize)) + 1; 
+			var range = parseInt(range) + 1; 
+			var url = "/admin/adminReserveList"; 
+			url = url + "?page=" + page; 
+			url = url + "&range=" + range; 
+			location.href = url;
+		}
+	</script>
 </body>
 </html>

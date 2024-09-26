@@ -1,5 +1,10 @@
 package com.hyegym.admin;
 
+import org.apache.tomcat.jakartaee.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.tomcat.jakartaee.commons.lang3.builder.ToStringStyle;
+
+import com.hyegym.notice.PaginationDTO;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,14 +12,22 @@ import lombok.Setter;
 @Setter
 public class AdminDTO {
 	
+	private int idx;
 	private String id;
 	private String name;
 	private String password;
 	private String birth;
 	private String gender;
 	private String email;
+	private PaginationDTO paginationDTO;
 	
 	
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 	public String getId() {
 		return id;
 	}
@@ -51,6 +64,16 @@ public class AdminDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public PaginationDTO getPaginationDTO() {
+		return paginationDTO;
+	}
+	public void setPaginationDTO(PaginationDTO paginationDTO) {
+		this.paginationDTO = paginationDTO;
+	}
+	@Override
+    public String toString() {
+        return ReflectionToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+    }
 
 
 }

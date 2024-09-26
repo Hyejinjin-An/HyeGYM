@@ -69,16 +69,13 @@
 		}
 		
 		function checkReserveinfo(info) {
-			
-			console.log(JSON.stringify(info));
-			
 			$.ajax({
-				type:"POST", //http메서드를 쓰면됨
-				url:"/user/selectReserveUser", //데이터를 전송하여 저장시키는 url
+				type:"POST",
+				url:"/user/selectReserveUser", 
 				data:JSON.stringify(info),
 				contentType: "application/json; charset=utf-8",
-				dataType:"Text", //리턴타입, 성공여부를 text로 추출해줌
-				success: function(data) { //controller에서 return받은 message부분임
+				dataType:"Text", 
+				success: function(data) { 
 					if(data == "success"){
 						location = "/user/reserveCheck";
 					}else{

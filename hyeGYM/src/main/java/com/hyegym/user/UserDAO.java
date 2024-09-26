@@ -2,8 +2,6 @@ package com.hyegym.user;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 public interface UserDAO {
 
 	public List<UserDTO> selectUserList();

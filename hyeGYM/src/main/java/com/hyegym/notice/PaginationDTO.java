@@ -1,5 +1,8 @@
 package com.hyegym.notice;
 
+import org.apache.tomcat.jakartaee.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.tomcat.jakartaee.commons.lang3.builder.ToStringStyle;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -118,15 +121,9 @@ public class PaginationDTO {
 	}
 
 	@Override
-	public String toString() {
-		return "{ " +
-        		"page = " + page + ", " +
-                "range = " + range + ", " +
-        		"listCnt = " + listCnt + ", " +
-                "pageCnt = " + pageCnt + ", " +
-                "startPage = " + startPage + ", " +
-        		"endPage = " + endPage + " " +
-                '}';
-	}
+    public String toString() {
+        return ReflectionToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
+    }
+
 
 }
